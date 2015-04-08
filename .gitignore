@@ -216,6 +216,6 @@ pip-log.txt
 .mr.developer.cfg
 
 #Unity Ignore Files
-AmazingGuess/Library/*
-AmazingGuess/obj/*
-AmazingGuess/Temp/*
+*/*/Library/*
+*/*/obj/*
+*/*/Temp/*
