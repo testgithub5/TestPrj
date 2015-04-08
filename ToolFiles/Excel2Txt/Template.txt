@@ -1,0 +1,61 @@
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+
+public class #CLASSNAME# 
+{
+	#PROPERTY1#
+
+    public #CLASSNAME#()
+    {
+        #PROPERTY2#
+    }
+}
+
+public class #CLASSNAME#Manager : TxtDataReader
+{
+    public enum #CLASSNAME#Type
+    {
+        #PROPERTY3#
+    }
+
+    static #CLASSNAME#Manager instance = null;
+    private List<#CLASSNAME#> dataList = new List<#CLASSNAME#>();
+
+    public static #CLASSNAME#Manager GetInstance() 
+    {
+        Debug.Log("#CLASSNAME#Manager");
+        if (instance == null)
+        {
+            instance = new #CLASSNAME#Manager();
+        }
+
+        return instance;
+    }
+
+    public void InitDataInfo(string path)
+    {
+        List<List<string>> text = ReaderData(path);
+        for (int i = 0; i < text.Count; i++)
+        {
+            #CLASSNAME# data = new #CLASSNAME#();
+			#PARSE#
+            dataList.Add(data);
+        }
+    }
+
+    public #CLASSNAME# get#CLASSNAME#<T>(T id,#CLASSNAME#Type type = #CLASSNAME#Type.lineID)
+    {
+        #CLASSNAME# mData = null;
+        foreach (#CLASSNAME# data in dataList)
+        {
+            //Debug.Log(id.ToString());
+            switch (type)
+            {
+				#SWITCH#
+            }
+        }
+        return mData;
+    }
+}
