@@ -45,7 +45,7 @@ public class #CLASSNAME#Manager : TxtDataReader
         }
     }
 
-    public #CLASSNAME# get#CLASSNAME#<T>(T id,#CLASSNAME#Type type = #CLASSNAME#Type.lineID)
+    public #CLASSNAME# get#CLASSNAME#<T>(T id,#CLASSNAME#Type type = #CLASSNAME#Type.ID)
     {
         #CLASSNAME# mData = null;
         foreach (#CLASSNAME# data in dataList)
